@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape Room Challenge</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a2e;
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+
+.container {
+    background-color: #16213e;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+h1 {
+    color: #e94560;
+}
+
+input {
+    padding: 10px;
+    width: 80%;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e94560;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff3860;
+}
+
+#responseMessage {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+     </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Escape Room Challenge</h1>
+        <p>Challenge: Solve this riddle to proceed!</p>
+        <p><strong>I speak without a mouth and hear without ears. I have no body, but I come alive with the wind. What am I?</strong></p>
+        
+        <input type="text" id="userAnswer" placeholder="Enter your answer...">
+        <button onclick="checkAnswer()">Submit</button>
+        <p id="responseMessage"></p>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const correctAnswer = "echo";
+            const userInput = document.getElementById("userAnswer").value.trim().toLowerCase();
+            const responseMessage = document.getElementById("responseMessage");
+
+            if (userInput === correctAnswer) {
+                responseMessage.textContent = "Correct! You may proceed to the next challenge.";
+                responseMessage.style.color = "green";
+            } else {
+                responseMessage.textContent = "Wrong answer! Try again.";
+                responseMessage.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
